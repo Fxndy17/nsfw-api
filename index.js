@@ -43,6 +43,7 @@ app.post("/nsfw", upload.single("image"), async (req, res) => {
 });
 
 const load_model = async () => {
+  console.log("load model")
   _model = await nsfw.load();
 };
 
