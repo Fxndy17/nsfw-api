@@ -7,7 +7,7 @@ const nsfw = require("nsfwjs");
 
 const app = express();
 const upload = multer();
-
+app.set('json spaces', 4)
 let _model;
 
 const convert = async (img) => {
@@ -25,9 +25,9 @@ const convert = async (img) => {
   return tf.tensor3d(values, [image.height, image.width, numChannels], "int32");
 };
 
-app.get("/", upload.single("image"), async (req, res) => {
+app.all('/', (_, res) => {
   res.json({
-    "fxndy": "asu"
+    creator: `@feneeduit`,
   })
 })
 
