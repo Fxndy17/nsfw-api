@@ -47,4 +47,4 @@ const load_model = async () => {
 };
 
 // Keep the model in memory, make sure it's loaded only once
-load_model().then(() => app.listen(process?.env?.PORT || 3000));
+load_model().then(() => app.listen(process?.env?.PORT || 3000)).catch(console.log)
