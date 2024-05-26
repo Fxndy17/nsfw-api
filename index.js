@@ -31,6 +31,7 @@ app.get("/", upload.single("image"), async (req, res) => {
   })
 })
 
+
 app.post("/nsfw", upload.single("image"), async (req, res) => {
   if (!req.file) res.status(400).send("Missing image multipart/form-data");
   else {
